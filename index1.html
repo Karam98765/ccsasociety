@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Canada Cyber Security Awareness Society</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root {
+    --blue: #0a192f;
+    --lightblue: #1f4068;
+    --accent: #00c2ff;
+    --light: #f4faff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: var(--light);
+    color: #333;
+    line-height: 1.7;
+}
+
+/* HEADER */
+header {
+    background: white;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--accent);
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--blue);
+}
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: var(--blue);
+    font-weight: bold;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(to right, #0a192f, #1f4068);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 38px;
+}
+
+.hero img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+.btn {
+    background: var(--accent);
+    color: white;
+    padding: 12px 25px;
+    margin-top: 20px;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* SECTION */
+section {
+    padding: 60px 30px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--blue);
+}
+
+/* SERVICES */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+/* ABOUT */
+.about {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+/* GALLERY */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* FORM */
+form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 12px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+    background: white;
+    padding: 25px;
+    margin: 10% auto;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+    background: var(--blue);
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">CCSA Society</div>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#services">Workshops</a>
+        <a href="#register">Register</a>
+        <a href="#calendar">Calendar</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Canada Cyber Security Awareness Society</h1>
+    <p>Free Cyber Security Workshops for All Age Groups</p>
+    <a href="#register" class="btn">Register Free</a>
+
+    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80">
+</section>
+
+<section id="services">
+<h2>Our Free Workshops</h2>
+<div class="grid">
+    <div class="card" onclick="openModal('m1')">Online Safety Basics</div>
+    <div class="card" onclick="openModal('m2')">Protecting Personal Data</div>
+    <div class="card" onclick="openModal('m3')">Social Media Safety</div>
+    <div class="card" onclick="openModal('m4')">Cyber Awareness for Seniors</div>
+    <div class="card" onclick="openModal('m5')">Kids Internet Safety</div>
+    <div class="card" onclick="openModal('m6')">Phishing & Scam Awareness</div>
+</div>
+</section>
+
+<!-- POPUPS -->
+<div id="m1" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('m1')">&times;</span><h3>Online Safety Basics</h3><p>Learn passwords, safe browsing, and online protection.</p></div></div>
+<div id="m2" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('m2')">&times;</span><h3>Protecting Personal Data</h3><p>Keep your personal info secure and private.</p></div></div>
+<div id="m3" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('m3')">&times;</span><h3>Social Media Safety</h3><p>Avoid scams and protect identity on social platforms.</p></div></div>
+<div id="m4" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('m4')">&times;</span><h3>Seniors Awareness</h3><p>Learn about phone scams and fraud protection.</p></div></div>
+<div id="m5" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('m5')">&times;</span><h3>Kids Safety</h3><p>Teach kids safe internet usage.</p></div></div>
+<div id="m6" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('m6')">&times;</span><h3>Phishing Awareness</h3><p>Identify fake emails and scams.</p></div></div>
+
+<section id="about">
+<h2>Why Cyber Security is Important</h2>
+<div class="about">
+<p>Cyber threats are increasing every day. Awareness helps prevent fraud, identity theft, and scams.</p>
+<p>Email: ccsasociety@gmail.com<br>Phone: 778-245-8932</p>
+<p><a href="https://www.facebook.com/share/g/1DK1RfkuyV/" target="_blank">Join Facebook Group</a></p>
+</div>
+</section>
+
+<section>
+<h2>Awareness Gallery</h2>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=800&q=80">
+<img src="https://images.unsplash.com/photo-1563206767-5b18f218e8de?auto=format&fit=crop&w=800&q=80">
+<img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&q=80">
+</div>
+</section>
+
+<section id="register">
+<h2>Register for Free Workshop</h2>
+<form action="https://formsubmit.co/ccsasociety@gmail.com" method="POST">
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email">
+    <input type="text" name="phone" placeholder="Phone Number">
+    <textarea name="message" placeholder="Message"></textarea>
+    <input type="hidden" name="_captcha" value="false">
+    <button type="submit">Register</button>
+</form>
+</section>
+
+<section id="calendar">
+<h2>Workshop Calendar</h2>
+<iframe src="https://calendar.google.com/calendar/embed?src=yourcalendarlink" style="border:0" width="100%" height="400"></iframe>
+</section>
+
+<footer>
+<p>© Canada Cyber Security Awareness Society</p>
+<p>Email: ccsasociety@gmail.com | Phone: 778-245-8932</p>
+</footer>
+
+<script>
+function openModal(id){document.getElementById(id).style.display="block";}
+function closeModal(id){document.getElementById(id).style.display="none";}
+window.onclick=function(e){
+let m=document.getElementsByClassName('modal');
+for(let i=0;i<m.length;i++){if(e.target==m[i]){m[i].style.display="none";}}
+}
+</script>
+
+</body>
+</html>
